@@ -1,5 +1,5 @@
+import { userProps } from '@app/contracts/src/users/types';
 import { Injectable } from '@nestjs/common';
-import { userProps } from '../utils/types';
 
 @Injectable()
 export class UsersService {
@@ -7,7 +7,7 @@ export class UsersService {
     { id: 1, name: 'user1', email: 'user1@user1.com' },
     { id: 2, name: 'user2', email: 'user2@user2.com' },
   ];
-  getAll() {
+  getAll(): userProps[] {
     return this.users;
   }
 }

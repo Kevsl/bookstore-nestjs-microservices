@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { bookProps } from '../utils/types';
-import { BookDto } from './dto';
+import { BookDto } from '@app/contracts/src/books/dto';
+import { bookProps } from '@app/contracts/src/books/types';
 
 @Injectable()
 export class BooksService {
@@ -29,7 +29,7 @@ export class BooksService {
     return this.books;
   }
 
-  create(dto: BookDto) {
+  create(dto: BookDto): bookProps[] {
     this.books.push({ ...dto, id: this.books.length + 1 });
     return this.books;
   }
